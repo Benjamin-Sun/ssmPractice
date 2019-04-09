@@ -15,7 +15,7 @@
           select * from t_user
     </select>
 
-    <select id="getOne" parameterType="int" resultType="entity.User">
+    <select id="getById" parameterType="int" resultType="entity.User">
         select * from t_user where uid = #{id}
     </select>
     
@@ -23,4 +23,13 @@
         insert into t_user (uname, upwd, telephone, address, ulevel)
         values (#{user.uname}, #{user.upwd}, #{user.telephone}, #{user.address}, #{user.ulevel})
     </insert>
+
+    <update id="updateById">
+        update t_user set uname = #{user.uname}, upwd = #{user.upwd}, telephone = #{user.telephone}, address = #{user.address}, ulevel = #{user.ulevel}
+        where uid = #{id}
+    </update>
+
+    <delete id="deleteById">
+        delete from t_user where uid = #{id}
+    </delete>
 </mapper>

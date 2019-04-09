@@ -51,7 +51,6 @@ public class demoTest {
     @Test
     public void xmlInsert() throws IOException {
         Conn conn = new Conn();
-        List<User> list = new ArrayList<>();
         //获取session
         SqlSession sqlSession = conn.getSqlSession();
 
@@ -64,5 +63,66 @@ public class demoTest {
         sqlSession.close();
 
         System.out.println(i);
+    }
+
+    @Test
+    public void xmlUpdateById() throws IOException {
+        Conn conn = new Conn();
+        SqlSession sqlSession = conn.getSqlSession();
+        IUserRepositoryXML userRepositoryXML = sqlSession.getMapper(IUserRepositoryXML.class);
+
+        User user = new User("bensdojfldsnen", "123456", "11111111111", "asda", 1);
+        int i = userRepositoryXML.updateById(user, 7);
+
+        sqlSession.commit();
+        sqlSession.close();
+
+        System.out.println(i);
+    }
+
+    @Test
+    public void xmlDeleteById() throws IOException {
+        Conn conn = new Conn();
+        SqlSession sqlSession = conn.getSqlSession();
+        IUserRepositoryXML userRepositoryXML = sqlSession.getMapper(IUserRepositoryXML.class);
+
+        int i = userRepositoryXML.deleteById(8);
+
+        sqlSession.commit();
+        sqlSession.close();
+
+        System.out.println(i);
+    }
+
+    @Test
+    public void updateById() throws IOException {
+        Conn conn = new Conn();
+        SqlSession sqlSession = conn.getSqlSession();
+        IUserRepository userRepository = sqlSession.getMapper(IUserRepository.class);
+
+        User user1 = new User("bensdojfldsnen", "123456", "11111111111", "asda", 1);
+        int i = userRepository.updateById(user1, 7);
+
+        sqlSession.commit();
+        sqlSession.close();
+
+        System.out.println(i);
+    }
+
+    @Test
+    public void deleteById() {
+    }
+
+    @Test
+    public void getById() throws IOException {
+        Conn conn = new Conn();
+        SqlSession sqlSession = conn.getSqlSession();
+        IUserRepository userRepository = sqlSession.getMapper(IUserRepository.class);
+
+        User user = userRepository.selectById(7);
+
+        sqlSession.close();
+
+        System.out.println(user);
     }
 }

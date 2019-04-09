@@ -1,9 +1,9 @@
 package test;
 
-import Entity.User;
-import Repository.Conn;
-import Repository.IUserRepository;
-import Repository.IUserRepositoryXML;
+import entity.User;
+import repository.Conn;
+import repository.IUserRepository;
+import repository.IUserRepositoryXML;
 import org.apache.ibatis.session.SqlSession;
 
 import java.io.IOException;

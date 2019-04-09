@@ -1,6 +1,6 @@
-package Repository;
+package repository;
 
-import Entity.User;
+import entity.User;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;

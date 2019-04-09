@@ -6,12 +6,16 @@
    根：mapper
       属性：namespace：映射的dao的全限定名：com.neuedu.dao.IUserDAO
 -->
-<mapper namespace = "Repository.IUserRepositoryXML">
+<mapper namespace = "repository.IUserRepositoryXML">
     <!--
         属性：id：设置时dao中方法名
         resultType:设置返回的类型：元素类型
     -->
-    <select id = "getAll" resultType = "Entity.User">
+    <select id="getAll" resultType="entity.User">
           select * from t_user
+    </select>
+
+    <select id="getOne" parameterType="int" resultType="entity.User">
+        select * from t_user where uid = #{id}
     </select>
 </mapper>

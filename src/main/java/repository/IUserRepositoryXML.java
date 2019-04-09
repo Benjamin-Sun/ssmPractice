@@ -9,4 +9,6 @@ public interface IUserRepositoryXML {
     List<User> getAll();
 
     User getOne(@Param("id") int id);
+
+    Integer insert(@Param("user") User user);
 }

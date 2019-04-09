@@ -47,4 +47,22 @@ public class demoTest {
 
         System.out.println(list);
     }
+
+    @Test
+    public void xmlInsert() throws IOException {
+        Conn conn = new Conn();
+        List<User> list = new ArrayList<>();
+        //获取session
+        SqlSession sqlSession = conn.getSqlSession();
+
+        User user = new User("benen", "123456", "11111111111", "asda", 1);
+        IUserRepositoryXML userRepositoryXML = sqlSession.getMapper(IUserRepositoryXML.class);
+        int i = userRepositoryXML.insert(user);
+
+        //手动提交事务
+        sqlSession.commit();
+        sqlSession.close();
+
+        System.out.println(i);
+    }
 }

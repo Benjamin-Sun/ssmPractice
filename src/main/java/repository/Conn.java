@@ -21,6 +21,7 @@ public class Conn {
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 
         //打开session
+//        SqlSession session = sqlSessionFactory.openSession(true); //打开自动提交
         SqlSession session = sqlSessionFactory.openSession();
         return session;
     }

@@ -65,6 +65,14 @@ public class User {
         this.ulevel = ulevel;
     }
 
+    public User(String uname, String upwd, String telephone, String address, Integer ulevel) {
+        this.uname = uname;
+        this.upwd = upwd;
+        this.telephone = telephone;
+        this.address = address;
+        this.ulevel = ulevel;
+    }
+
     public User() {
     }
 

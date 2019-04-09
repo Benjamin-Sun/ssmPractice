@@ -18,4 +18,9 @@
     <select id="getOne" parameterType="int" resultType="entity.User">
         select * from t_user where uid = #{id}
     </select>
+    
+    <insert id="insert">
+        insert into t_user (uname, upwd, telephone, address, ulevel)
+        values (#{user.uname}, #{user.upwd}, #{user.telephone}, #{user.address}, #{user.ulevel})
+    </insert>
 </mapper>

@@ -109,4 +109,14 @@ public class demo {
 
         return i;
     }
+
+    public List<User> getAllByXML(){
+
+        List<User> list = sqlSession.selectList("getAll");
+        System.out.println(list);
+
+        sqlSession.close();
+
+        return list;
+    }
 }

@@ -39,6 +39,9 @@ public class demoTest {
 
         try {
             IUserRepositoryXML userRepository = sqlSession.getMapper(IUserRepositoryXML.class);
+            List<User> list1 = sqlSession.selectList("getAll");
+            System.out.println(list1);
+
             list = userRepository.getAll();
         } finally {
             //关闭session

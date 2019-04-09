@@ -16,5 +16,6 @@
     </environments>
     <mappers>
         <mapper class="Repository.IUserRepository"/>
+        <mapper class="Repository.IUserRepositoryXML"/>
     </mappers>
 </configuration>

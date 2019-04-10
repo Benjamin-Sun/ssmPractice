@@ -7,6 +7,11 @@ import java.util.List;
 
 public interface IUserRepository {
     @Select("SELECT * FROM t_user")
+//    当数据库字段名与实体类属性名不配对时进行配对，通过在sql语句中给字段起别名的方式
+//    @Results(value = {
+//            @Result(property = "", column = ""),
+//            @Result()
+//    }) //对应表里的字段,property为实体类属性，column为数据库字段
     List<User> selectAll();
 
     @Select("SELECT * FROM t_user WHERE uid = #{id}")

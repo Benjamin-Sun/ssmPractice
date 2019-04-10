@@ -19,5 +19,6 @@
         <mapper class="repository.IUserRepositoryXML"/>
         <!--非接口使用方式，直接通过xml-->
         <mapper resource="repository/IUserRepositoryXML.xml"/>
+        <mapper class="repository.IGoodsRepositoryXML"/>
     </mappers>
 </configuration>

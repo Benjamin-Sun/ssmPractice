@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="repository.IGoodsRepositoryXML">
+    <sql id="all">
+        gname, gnum, gprice, gstock, gsell, gdesc
+    </sql>
+    <!--高级查询 <where> 可自动省略掉没用的and和or-->
+    <select id="getByNameOrDesc" resultType="entity.Goods">
+        select <include refid="all"/>
+        from t_good
+        <where>
+            <if test="gname != null"/>
+                and gname like "%${gname}%"
+            <if test="gdesc != null"/>
+                and gdesc like concat("%", #{gdesc}, "%")
+        </where>
+    </select>
+</mapper>

@@ -26,6 +26,15 @@ public class Conn {
         return session;
     }
 
+    public SqlSession getSqlSession(Boolean bool) throws IOException {
+        String resource = "mybatis_config.xml";
+        InputStream inputStream = Resources.getResourceAsStream(resource);
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+
+        SqlSession session = sqlSessionFactory.openSession(bool);
+        return session;
+    }
+
     public void closeSqlSession(SqlSession sqlSession){
         //关闭session
         sqlSession.close();

@@ -11,10 +11,25 @@
         select <include refid="all"/>
         from t_good
         <where>
-            <if test="gname != null"/>
+            <if test="gname != null">
                 and gname like "%${gname}%"
-            <if test="gdesc != null"/>
+            </if>
+            <if test="gdesc != null">
                 and gdesc like concat("%", #{gdesc}, "%")
+            </if>
         </where>
+    </select>
+
+    <select id="getByNameOrDescT" resultType="entity.Goods">
+        select <include refid="all"/>
+        from t_good
+        <trim prefix="where" prefixOverrides="and|or">
+            <if test="gname != null">
+                and gname like "%${gname}%"
+            </if>
+            <if test="gdesc != null">
+                and gdesc like concat("%", #{gdesc}, "%")
+            </if>
+        </trim>
     </select>
 </mapper>

@@ -6,6 +6,7 @@ import repository.Conn;
 import repository.IGoodsRepositoryXML;
 
 import java.io.IOException;
+import java.util.List;
 
 public class GoodsService {
     private SqlSession sqlSession = new Conn().getSqlSession();
@@ -14,8 +15,8 @@ public class GoodsService {
     public GoodsService() throws IOException {
     }
 
-    public Goods getByNameOrDesc(String gname, String gdesc){
-        Goods goods = goodsRepositoryXML.getByNameOrDesc(gname, gdesc);
+    public List<Goods> getByNameOrDesc(String gname, String gdesc){
+        List<Goods> goods = goodsRepositoryXML.getByNameOrDesc(gname, gdesc);
 
         sqlSession.close();
         return goods;

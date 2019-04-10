@@ -18,5 +18,6 @@ public class GoodsServiceTest {
 
         IGoodsRepositoryXML goodsRepositoryXML = session.getMapper(IGoodsRepositoryXML.class);
         System.out.println(goodsRepositoryXML.getByNameOrDesc(null, null));
+        System.out.println(goodsRepositoryXML.getByNameOrDescT(null, null));
     }
 }

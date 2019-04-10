@@ -9,5 +9,7 @@ public interface IGoodsRepositoryXML {
 
     List<Goods> getAll();
 
-    Goods getByNameOrDesc(@Param("gname") String gname, @Param("gdesc") String gdesc);
+    List<Goods> getByNameOrDesc(@Param("gname") String gname, @Param("gdesc") String gdesc);
+
+    List<Goods> getByNameOrDescT(@Param("gname") String gname, @Param("gdesc") String gdesc);
 }

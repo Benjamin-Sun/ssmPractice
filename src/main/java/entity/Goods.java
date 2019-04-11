@@ -9,6 +9,7 @@ public class Goods {
     private BigDecimal gprice;
     private int gstock;
     private String gdesc;
+    private int cid;
 
     public int getGid() {
         return gid;
@@ -58,13 +59,22 @@ public class Goods {
         this.gdesc = gdesc;
     }
 
-    public Goods(int gid, int gnum, String gname, BigDecimal gprice, int gstock, String gdesc) {
+    public int getCid() {
+        return cid;
+    }
+
+    public void setCid(int cid) {
+        this.cid = cid;
+    }
+
+    public Goods(int gid, int gnum, String gname, BigDecimal gprice, int gstock, String gdesc, int cid) {
         this.gid = gid;
         this.gnum = gnum;
         this.gname = gname;
         this.gprice = gprice;
         this.gstock = gstock;
         this.gdesc = gdesc;
+        this.cid = cid;
     }
 
     public Goods() {

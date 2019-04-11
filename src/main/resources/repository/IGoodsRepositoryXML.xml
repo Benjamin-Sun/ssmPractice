@@ -32,4 +32,36 @@
             </if>
         </trim>
     </select>
+
+    <!--<update id="update">
+        UPDATE  t_good
+       <set>
+            <if  test="goods.gname!=null">
+                gname=#{goods.gname},
+            </if>
+            <if test="goods.gdesc!=null">
+                gdesc=#{goods.gdesc},
+            </if>
+            <if test="goods.gprice!=null">
+                gprice=#{goods.gprice},
+            </if>
+       </set>
+        where gid=#{gid}
+    </update>-->
+
+    <update id="update">
+        update t_good
+        <trim prefix="set" suffixOverrides=",">
+            <if  test="goods.gname!=null">
+                gname=#{goods.gname},
+            </if>
+            <if test="goods.gdesc!=null">
+                gdesc=#{goods.gdesc},
+            </if>
+            <if test="goods.gprice!=null">
+                gprice=#{goods.gprice},
+            </if>
+        </trim>
+        where gid=#{gid}
+    </update>
 </mapper>

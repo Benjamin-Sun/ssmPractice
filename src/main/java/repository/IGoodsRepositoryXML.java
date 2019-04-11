@@ -14,4 +14,6 @@ public interface IGoodsRepositoryXML {
     List<Goods> getByNameOrDescT(@Param("gname") String gname, @Param("gdesc") String gdesc);
 
     Integer update(@Param("goods") Goods goods, @Param("gid")int gid);
+
+    Integer insert(@Param("goods") Goods goods);
 }

@@ -64,4 +64,9 @@
         </trim>
         where gid=#{gid}
     </update>
+
+    <insert id="insert">
+        insert into t_good (gnum, gname, gprice, gstock, gdesc, cid)
+        values(#{goods.gnum}, #{goods.gname}, #{goods.gprice}, #{goods.gstock}, #{goods.gdesc}, #{goods.cid})
+    </insert>
 </mapper>

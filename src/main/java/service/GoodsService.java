@@ -37,4 +37,11 @@ public class GoodsService {
 
         return i;
     }
+
+    public Integer insert(Goods goods){
+        int i = goodsRepositoryXML.insert(goods);
+        sqlSession.commit();
+        sqlSession.close();
+        return i;
+    }
 }

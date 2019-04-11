@@ -80,12 +80,13 @@ public class Goods {
     public Goods() {
     }
 
-    public Goods(int gnum, String gname, BigDecimal gprice, int gstock, String gdesc) {
+    public Goods(int gnum, String gname, BigDecimal gprice, int gstock, String gdesc, int cid) {
         this.gnum = gnum;
         this.gname = gname;
         this.gprice = gprice;
         this.gstock = gstock;
         this.gdesc = gdesc;
+        this.cid = cid;
     }
 
     @Override
